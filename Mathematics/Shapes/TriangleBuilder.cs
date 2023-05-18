@@ -1,4 +1,6 @@
-﻿namespace Mathematics.Shapes
+﻿using Mathematics.Exceptions;
+
+namespace Mathematics.Shapes
 {
   public interface ITriangleBuilder
   {
@@ -14,7 +16,7 @@
     public TriangleBuilder(string name) => triangle = new Triangle() { Name = name };
     private double CheckValue(double side)
     {
-      if (side <= 0) throw new Exception("Сторона меньше нуля");
+      if (side <= 0) throw new UnacceptableValueException("Сторона меньше нуля");
       return side;
     }
 
@@ -42,7 +44,7 @@
       var b = triangle.B;
       var c = triangle.C;
       if (!(a + b > c && b + c > a && c + a > b))
-        throw new Exception("С фигурой что-то не так");
+        throw new BuildFigureException("С фигурой что-то не так");
       return triangle;
     }
   }
