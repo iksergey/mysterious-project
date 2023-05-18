@@ -1,6 +1,7 @@
 ﻿using Core.Interfaces;
 using Core.Models;
 using Mathematics.CalculateArea;
+using Mathematics.Exceptions;
 using Mathematics.Shapes;
 
 namespace Core.Infrastructure
@@ -50,17 +51,26 @@ namespace Core.Infrastructure
 
     public RightTriangleInfo IsRightTriangle(double[] sides)
     {
-      var result =
-      Triangle.Create()
-              .SetA(sides[0])
-              .SetB(sides[1])
-              .SetC(sides[2])
-              .Build()
-              .IsRightTriangle;
+      bool result = false;
+      string msgEx = String.Empty;
+      try
+      {
+        result = Triangle.Create()
+                         .SetA(sides[0])
+                         .SetB(sides[1])
+                         .SetC(sides[2])
+                         .Build()
+                         .IsRightTriangle;
+      }
+      catch (MathematicsException ex)
+      {
+        msgEx = ex.Message;
+      }
       return new RightTriangleInfo
       {
         Sides = sides,
-        IsRightTriangle = result
+        IsRightTriangle = result,
+        TextException = msgEx
       };
     }
 
