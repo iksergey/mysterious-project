@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "e520dee6-8bba-41c6-8eee-fbb038ea97b7",
+		"name": "mysterious-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17367059"
+	},
+	"item": [
+		{
+			"name": "AppendCircle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5101/api/Math/AppendCircle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"api",
+						"Math",
+						"AppendCircle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AppendTriangle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5101/api/Math/AppendTriangle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"api",
+						"Math",
+						"AppendTriangle"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsRightTriangle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[3,4,4]"
+				},
+				"url": {
+					"raw": "http://localhost:5101/api/Math/IsRightTriangle",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5101",
+					"path": [
+						"api",
+						"Math",
+						"IsRightTriangle"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
